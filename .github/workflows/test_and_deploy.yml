@@ -15,6 +15,7 @@ jobs:
       - name: Run tests
         run: npm test
   deploy-react-app: #fake deploy just to check the things :)
+    needs: test-react-app
     runs-on: ubuntu-latest
     steps:
       - name: Get the code from the repository
