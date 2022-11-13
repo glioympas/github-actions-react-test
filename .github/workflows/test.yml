@@ -1,0 +1,16 @@
+name: Test the React app
+on: push
+jobs:
+  test-react-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code from the repository
+        uses: actions/checkout@v3
+      - name: Install Node to the machine
+        actions: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies of the project
+        run: npm ci
+      - name: Run tests
+        run: npm test
